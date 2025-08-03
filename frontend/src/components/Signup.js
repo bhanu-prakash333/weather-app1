@@ -6,7 +6,7 @@ function Signup({ onAuthSuccess }) {
 
   const signup = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/signup", {
+      const res = await fetch("https:/weather-app1-wev9.onrender.com/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
