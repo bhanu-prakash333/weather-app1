@@ -7,7 +7,7 @@ function Weather() {
   const getWeather = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/api/weather?city=${city}`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/weather`, {
         headers: {
           "Authorization": `Bearer ${token}`
         }
