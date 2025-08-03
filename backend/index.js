@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("✅ MongoDB connected"))
   .catch(err => console.error("❌ Mongo Error:", err));
 
-app.use("/api/auth", require("./routes/auth"));
+app.use("/api/auth", require("./routes/weather"));
 app.get("/",(req,res)=>{
   res.send("Backend is woring")
 })
