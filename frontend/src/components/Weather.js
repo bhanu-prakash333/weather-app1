@@ -4,21 +4,24 @@ function Weather() {
   const [city, setCity] = useState("");
   const [data, setData] = useState(null);
 
-  const getWeather = async () => {
-    try {
-      const token = localStorage.getItem("token");
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/weather`, {
-        headers: {
-          "Authorization": `Bearer ${token}`
-        }
-      });
-      const json = await res.json();
-      if (json.error) alert(json.error);
-      else setData(json);
-    } catch {
-      alert("Error fetching weather.");
-    }
-  };
+const getWeather = async () => {
+  try {
+    const token = localStorage.getItem("token");
+    const res = await fetch("https:/weather-app1-wev9.onrender.com//api/weather", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": Bearer `${token}`
+      },
+      body: JSON.stringify({ city })  // ← important!
+    });
+    const json = await res.json();
+    if (json.error) alert(json.error);
+    else setData(json);
+  } catch (err) {
+    alert("Error fetching weather.");
+  }
+}
 
   return (
     <div>
