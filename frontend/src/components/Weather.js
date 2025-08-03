@@ -7,7 +7,7 @@ function Weather() {
 const getWeather = async () => {
   try {
     const token = localStorage.getItem("token");
-    const res = await fetch("https:/weather-app1-wev9.onrender.com//api/weather", {
+    const res = await fetch("https:/weather-app1-wev9.onrender.com/api/weather", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
